@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet" />
+  <title>Menu App</title>
+</head>
+
+<body>
+  <div id="container" class=" bg-slate-500 font-[merienda] main">
+    <header>
+      <div class="relative min-h-screen md:flex" data-dev-hint="container">
+        <input type="checkbox" id="menu-open" class="hidden" />
+        <!-- Fixed Open Menu -->
+        <label id="fixedOpenMenu" for="menu-open"
+          class="fixed z-50 right-3 bottom-3 shadow-lg rounded-full p-3  bg-gray-400  font-bold text-black md:hidden"
+          data-dev-hint="floating action button">
+
+          <svg id="menu-open-icon" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-7 h-7 ">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+
+        </label>
+
+        <header class="main bg-[#011626] text-gray-100 flex justify-between md:hidden" data-dev-hint="mobile menu bar">
+          <a href="#" class="block p-4 text-white font-bold whitespace-nowrap truncate">
+            Sheki Restoranı
+          </a>
+
+          <label for="menu-open" id="mobile-menu-button"
+            class="bg-[#011626] m-2 p-2 focus:outline-none hover:text-white hover:bg-gray-700 rounded-md">
+            <svg id="menu-open-icon" class="h-6 w-6 transition duration-200 ease-in-out"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-close-icon" class="h-6 w-6 transition duration-200 ease-in-out"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </label>
+        </header>
+
+        <aside id="sidebar"
+          class="z-10 main bg-[#011626] text-gray-100 md:w-64 w-3/4 space-y-6 pt-6 px-0 fixed inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out  md:flex md:flex-col  overflow-y-auto"
+          data-dev-hint="sidebar; px-0 for frameless; px-2 for visually inset the navigation">
+          <div class="flex flex-col space-y-6" data-dev-hint="optional div for having an extra footer navigation">
+            <a href="#" class="text-white flex items-center space-x-2 px-4" title="Your App is cool">
+
+              <span class="ml-6 text-2xl font-extrabold whitespace-nowrap truncate">Yemek ve Ickiler</span>
+            </a>
+          </div>
+          <!-- Menu Nav -->
+          <nav class="nav_menu text-2xl" data-dev-hint="second-main-navigation or footer navigation">
+            <a href="#isti_yemekler" class="block py-2 px-4 transition duration-200 hover:bg-gray-700 hover:text-white">
+              <h1 class="ml-6">İsti Yeməklər</h1>
+
+            </a>
+            <a href="#salats" class=" block py-2 px-4 transition duration-200 hover:bg-gray-700 hover:text-white">
+              <h1 class="ml-6">Salatlar</h1>
+            </a>
+            <a href="#spirts" class="block py-2 px-4 transition duration-200 hover:bg-gray-700 hover:text-white">
+              <h1 class="ml-6">Spirtli</h1>
+
+            </a>
+            <a href="#cold-drink" class="block py-2 px-4 transition duration-200 hover:bg-gray-700 hover:text-white">
+              <h1 class="ml-6"> Sərin İckilər</h1>
+
+            </a>
+            <a href="#burgers" class="block py-2 px-4 transition duration-200 hover:bg-gray-700 hover:text-white">
+              <h1 class="ml-6">Burger</h1>
+
+            </a>
+          </nav>
+        </aside>
+        <!-- Content Section-->
+        <main id="content" class="flex-1 p-6 lg:px-8">
+          <div class="max-w-2xl mx-auto">
+            <span class="space-y-7 ">
+              <div class="text-center font-bold ">
+                <img src="head-logo.png">
+                <h1 class="text-2xl"> Xoş gəlibsiniz</h1>
+              </div>
+              <!-- Isti Yemekler -->
+
+              <div id="isti_yemekler" class=" cards w-full h-auto  bg-[#011626] text-white  rounded-md ">
+                <!-- Bezek -->
+                <div class="w-full flex justify-center">
+                  <img src="6570.png" alt="" class="w-96 justify-center items-center">
+                </div>
+                <h1
+                  class="font-[merienda] text-2xl  decoration-gray-400 text-center  font-bold underline underline-offset-8">
+                  İsti Yeməklər
+                </h1>
+                <!-- All Food -->
+                <div class="w-5/6 mx-auto space-y-4 mt-7">
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class=" ">Quzu Eti</span>
+                    <span class="">8 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Antirkot Kababi </span>
+                    <span>10 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Basdirma</span>
+                    <span>5 &#x20BC;</span>
+                  </div>
+
+
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Lule</span>
+                    <span>4 &#x20BC;</span>
+                  </div>
+                </div>
+                <!-- Bezek second -->
+                <div class="w-full flex justify-center relative bottom-0 mt-4">
+                  <img src="6570.png" alt="" class=" w-96 justify-center items-center">
+                </div>
+
+
+              </div>
+              <!-- Salatlar -->
+
+              <div id="salats" class="cards w-full h-auto  bg-[#011626] text-white  rounded-md ">
+                <!-- Bezek -->
+                <div class="w-full flex justify-center">
+                  <img src="6570.png" alt="" class="w-96 justify-center items-center">
+                </div>
+                <h1
+                  class="font-[merienda] text-2xl  decoration-gray-400 text-center  font-bold underline underline-offset-8">
+                  Salatlar
+                </h1>
+                <!-- All Food -->
+                <div class="w-5/6 mx-auto space-y-6 mt-7">
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class=" ">Paytaxt Salati</span>
+                    <span class="">8 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Krab </span>
+                    <span>10 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Yaşıl</span>
+                    <span>5 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Kök</span>
+                    <span>4 &#x20BC;
+                    </span>
+                  </div>
+                </div>
+                <!-- Bezek second -->
+                <div class="w-full flex justify-center relative bottom-0 mt-4">
+                  <img src="6570.png" alt="" class="w-96 justify-center items-center">
+                </div>
+
+
+              </div>
+              <!-- Spirtli Ickiler -->
+              <div id="spirts" class="cards w-full h-auto  bg-[#011626] text-white  rounded-md">
+                <!-- Bezek -->
+                <div class="w-full flex justify-center">
+                  <img src="6570.png" alt="" class="w-96 justify-center items-center">
+                </div>
+                <h1
+                  class="font-[merienda] text-2xl  decoration-gray-400 text-center  font-bold underline underline-offset-8">
+                  Spirtli içkilər
+                </h1>
+                <!-- All Food -->
+                <div class="w-5/6 mx-auto space-y-6 mt-7">
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class=" ">Viski</span>
+                    <span class="">8 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Vodka </span>
+                    <span>10 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Çaxır</span>
+                    <span>5 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Konyak</span>
+                    <span>4 &#x20BC;</span>
+                  </div>
+                </div>
+                <!-- Bezek second -->
+                <div class="w-full flex justify-center relative bottom-0 mt-4">
+                  <img src="6570.png" alt="" class="w-96 justify-center items-center">
+                </div>
+
+
+              </div>
+
+              <div id="cold-drink" class="cards w-full h-auto  bg-[#011626] text-white  rounded-md">
+                <!-- Bezek -->
+                <div class="w-full flex justify-center">
+                  <img src="6570.png" alt="" class="w-96 justify-center items-center">
+                </div>
+                <h1
+                  class="font-[merienda] text-2xl  decoration-gray-400 text-center  font-bold underline underline-offset-8">
+                  Sərin içkilər
+                </h1>
+                <!-- All Food -->
+                <div class="w-5/6 mx-auto space-y-6 mt-7">
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class=" ">Cola-cola</span>
+                    <span class="">8 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Fanta </span>
+                    <span>10 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Redbull</span>
+                    <span>5 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Duşes</span>
+                    <span>4 &#x20BC;</span>
+                  </div>
+                </div>
+                <!-- Bezek second -->
+                <div class="w-full flex justify-center relative bottom-0 mt-4">
+                  <img src="6570.png" alt="" class="w-96 justify-center items-center ">
+                </div>
+              </div>
+
+              <div id="burgers" class="cards w-full h-auto  bg-[#011626] text-white  rounded-md">
+                <!-- Bezek -->
+                <div class="w-full flex justify-center">
+                  <img src="6570.png" alt="" class="w-96 justify-center items-center">
+                </div>
+                <h1
+                  class="font-[merienda] text-2xl  decoration-gray-400 text-center  font-bold underline underline-offset-8">
+                  Burgerlər
+                </h1>
+                <!-- All Food -->
+                <div class="w-5/6 mx-auto space-y-4 mt-7">
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class=" ">Qamburger</span>
+                    <span class="">8 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Çizburger </span>
+                    <span>10 &#x20BC;</span>
+                  </div>
+                  <div class="flex justify-between font-bold text-xl ">
+                    <span class="">Bigmag Menu</span>
+                    <span>5 &#x20BC;</span>
+                  </div>
+
+                </div>
+                <!-- Bezek second -->
+                <div class="w-full flex justify-center relative bottom-0 mt-4">
+                  <img src="6570.png" alt="" class=" w-96 justify-center items-center">
+                </div>
+
+
+              </div>
+            </span>
+            <!-- /End replace -->
+          </div>
+        </main>
+      </div>
+    </header>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
